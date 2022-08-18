@@ -2,7 +2,7 @@
 ``DevOps`` ``Shell`` ``Bash`` ``Scripting``
 
 ## Tasks
-|:Files:|:Description:|
+|Files|Description|
 |:------|:------------|
 [RSA_public_key.pub](./0-RSA_public_key.pub) | a SSH RSA key needed to set manage my own servers concept page hosted on remote data centers.
 [1-for_best_school](./1-for_best_school) | Bash script that displays Best School 10 times using for statement
