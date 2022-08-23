@@ -1,6 +1,13 @@
 # 0x04. Loops, conditions and parsing
 ``DevOps`` ``Shell`` ``Bash`` ``Scripting``
-
+### Resources
+* [Make your scripts portable with #!/usr/bin/env](https://www.cyberciti.biz/tips/finding-bash-perl-python-portably-using-env.html)
+* [File test operators](https://tldp.org/LDP/abs/html/fto.html)
+* [Comparison operators](https://tldp.org/LDP/abs/html/comparison-ops.html)
+* [Variable assignment and arithmetic](https://tldp.org/LDP/abs/html/ops.html)
+* [Loops Sample](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html)
+* [ShellCheck](https://github.com/koalaman/shellcheck/wiki/SC2034)
+* [IFS (internal field separator)](https://tldp.org/LDP/abs/html/internalvariables.html)
 ## Tasks
 |Files|Description|
 |:------|:------------|
