@@ -8,6 +8,7 @@
 * [Loops Sample](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html)
 * [ShellCheck](https://github.com/koalaman/shellcheck/wiki/SC2034)
 * [IFS (internal field separator)](https://tldp.org/LDP/abs/html/internalvariables.html)
+* [$ variable in bash script](http://zyxue.github.io/2015/03/21/meaning-of-dollar-sign-variables-in-bash-script.html)
 ## Tasks
 |Files|Description|
 |:------|:------------|
