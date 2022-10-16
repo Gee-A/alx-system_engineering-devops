@@ -78,8 +78,8 @@ package { 'puppet-lint':
   provider => 'gem',
 }
 ```
-above code is synonymous to ``gem install puppet-lint``
-Run it: ``puppet-lint /etc/puppet/modules``
+above code is synonymous to ``gem install puppet-lint`` <br/>
+Run it: ``puppet-lint /etc/puppet/modules`` <br/>
 Fix them: ``puppet-lint --fix /etc/puppet/modules``
 
 ## Tasks
