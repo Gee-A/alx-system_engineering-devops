@@ -17,44 +17,44 @@ they are all driven by the same purpose (ie. to make sure the system's state mat
 described by the provision scripts).
 
 #### Benefits of Configuration Management for Servers
-* Quick Provisioning of New Servers
-	Automation makes provisioning much quicker and more efficient because it allows tedious tasks
+* Quick Provisioning of New Servers <br/>
+	> Automation makes provisioning much quicker and more efficient because it allows tedious tasks
 	to be performed faster and more accurately.
-* Quick Recovery from Critical Events
-	When a server goes offline due to unknown circumstances, it might take several hours to
+* Quick Recovery from Critical Events <br/>
+	> When a server goes offline due to unknown circumstances, it might take several hours to
 	properly audit the system and find out what really happened. In scenarios like this, deploying
 	a replacement server is usually the safest way to get the services back online while a detailed
 	inspection is done on the affected server. CM-automation sort this in a quick and reliable way.
-* Version Control for the Server Environment
-	Once the server setup is translated into a set of provisioning scripts, then one can apply to
+* Version Control for the Server Environment <br/>
+	> Once the server setup is translated into a set of provisioning scripts, then one can apply to
 	many of the tools and workflows one would normally use for software source code to the server
 	environment.
 	Version control tools, such as Git, can be used to keep track of changes made to the
 	provisioning and to maintain separate branches for legacy version of the scripts.
-* Idempotent Behavior
-	Configuration management (CM) tools keep track of the state of resources in order to avoid
+* Idempotent Behavior <br/>
+	> Configuration management (CM) tools keep track of the state of resources in order to avoid
 	repeated tasks that were executed before.
-* System Facts
-	CM tools usually provide detailed info about the system being provisioned which are available
+* System Facts <br/>
+	> CM tools usually provide detailed info about the system being provisioned which are available
 	through the global variables, known as facts. They include: network interface, IP addresses,
 	OS, and distribution. They can be used to make provisioning scripts and templates more
 	adaptive for multiple systems.
-* Templating System
-	Most CM tools will provide a built-in templating system that can be used to facilitate setting
+* Templating System <br/>
+	> Most CM tools will provide a built-in templating system that can be used to facilitate setting
 	up configuration files and services. Templates usually support variables, loops, and
 	conditionals that can be used to maximise versatility. A template should contain placeholders
 	for values that can change from host to host, such as ``NameServer`` and ``DocumentRoot``.
-* Extensibility
-	Most provisioning tools provide ways in which one can easily reuse and share smaller chunks of
+* Extensibility <br/>
+	> Most provisioning tools provide ways in which one can easily reuse and share smaller chunks of
 	the provisioning setup as modules or plugins.
 
 ### Overview of Puppet (an example of CM tool)
-**Script Language**							Custom DSL based on Ruby
-**Infrastructure**							Puppet Master synchronizes configuration on Puppet Nodes
-**Requires specialized software for nodes**	Yes
-**Provides centralized point of control**	Yes, via Puppet Master
-**Script Terminology**						Manifest/Modules
-**Task Execution Order**					Non-Sequential
+**Script Language**	&emsp; Custom DSL based on Ruby <br/>
+**Infrastructure** &emsp; Puppet Master synchronizes configuration on Puppet Nodes <br/>
+**Requires specialized software for nodes** &ensp; Yes <br/>
+**Provides centralized point of control** &emsp; Yes, via Puppet Master <br/>
+**Script Terminology** &emsp; Manifest/Modules <br/>
+**Task Execution Order** &emsp; Non-Sequential <br/>
 
 needs further information or confused? [Tell me more](https://www.digitalocean.com/community/tutorials/an-introduction-to-configuration-management)
 
