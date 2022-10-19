@@ -1,40 +1,21 @@
-# 0x0C. Web server
+#0x0C. Web server
 ``DevOps`` ``SysAdmin``
 
 ## Concepts
-#### What is a Child Process?<br/>
-	> A child process is a procress created by another process (called the parent process). The benefit
-	of a child process is that it can start/stop at will without affecting the parent process.<br/>
-	The child process is, however, is typically dependent on the parent process. If the parent process
-	dies, the child process becomes an orphan process.
-	Apache creates child processes whenever the number of requests (web page accesses from users)
-	exceeds the maximum allowed number of requests. When the maximum number of child process requested
-	is exceeded, another child process spawns.
-
-	To view all running processes with their child processes in a "tree" format, use the following command:
-	```
-	$ ps axf
-	```
-
 #### How the web works
 Computers connected to the internet are called clients and servers.
 * Clients are the typical web user's internet-connected devices
 * Servers are computer that store webpages, sites, or apps
-When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto
-the client machine to be displayed in the user's web browser.<br/>
+When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.
 
 **Other tools that makes connection possible**
 * Internet connection: Allows you to send and receive data on the web.
-* TCP/IP: Transmission Control Protocol and Internet Protocol are communication protocols that define 
-	how data should travel across the internet.
-* DNS: Domain Name System is responsible for translating a user adaptable domain name (ex. www.airtaxi.com)
-	to computer adaptable IP address (ex. 23.101.242.3), so it can send HTTP messages to the right place
-* HTTP: Hypertext Transer Protocol is an application protocol that create connection between the clients
-	and the servers.
+* TCP/IP: Transmission Control Protocol and Internet Protocol are communication protocols that define how data should travel across the internet.
+* DNS: Domain Name System is responsible for translating a user adaptable domain name (ex. www.airtaxi.com) to computer adaptable IP address (ex. 23.101.242.3), so it can send HTTP messages to the right place
+* HTTP: Hypertext Transer Protocol is an application protocol that create connection between the clients and the servers.
 * Component files: A website is made up of many different files which are of two main types:<br/>
 &emsp Code files: tools that build up the websites. <br/>
-&emsp Assets: This is a collective name for all the other stuff that makes up a website (ex. images,
-music, video, .doc, PDFs ..)
+&emsp Assets: This is a collective name for all the other stuff that makes up a website (ex. images, music, video, .doc, PDFs ..)
 
 **So,**
 1. The browser through the DNS server, find the real address of the server that the website lives on.
@@ -43,9 +24,8 @@ music, video, .doc, PDFs ..)
 4. The browser assembles the small chunks into a complete web page and displays it.
 
 #### What are Packets
-packets are format in which the data is sent from server to client. Basically, data are sent across the
-web in thousands of small packets. This because it is easier to replace dropped or corrupted chunks. Additionally, the packets can be routed along different path, making the exchange faster and allowing many
-different users to download the website at the same time. If each website was sent as a single big chunk,
+packets are format in which the data is sent from server to client. Basically, data are sent across the web in thousands of small packets. This because it is easier to replace dropped or corrupted chunks. 
+Additionally, the packets can be routed along different path, making the exchange faster and allowing many different users to download the website at the same time. If each website was sent as a single big chunk,
 only one user could download it at a time, which would make the web very inefficient.
 
 #### Nginx
@@ -56,10 +36,8 @@ Nginx is a free and open-source software (web server) that can be used as a load
 mkdir -p /var/www/example.com/html
 mkdir -p /var/www/test.com/html
 ```
-``/var/www/`` is the directory structure. The actual web content will be placed in ``html`` directory within the ``site-specific`` directories. This gives us some additional flexibility to create other directories associated with our sites as siblings to ``html`` directory if neccessary.
-
-Note: Nginx is configured to serve documents out of a directory at ``/va/www/html``, which will only work well for a single site.<br/>
-The -p flags tells mkdir to create any neccessary parent directories.
+``/var/www/`` is the directory structure. The actual web content will be placed in ``html`` directory within the ``site-specific`` directories. This gives us some additional flexibility to create other directories associated with our sites as siblings to ``html`` directory if neccessary.<br/>
+Note: Nginx is configured to serve documents out of a directory at ``/var/www/html``, which will only work well for a single site. The -p flags tells mkdir to create any neccessary parent directories.
 
 2. Creating Sample Pages for Each Site so that we will have something to display.
 
@@ -68,10 +46,7 @@ By default Nginx contains one server block called ``default`` which we can use a
 ```
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
 ```
-Open the new file
-```
-sudo nano /etc/nginx/sites-available/example.com
-```
+Open the new file: ``sudo nano /etc/nginx/sites-available/example.com``
 Point it to the site's document root that was created
 ```
 server {
@@ -133,6 +108,20 @@ local $ sudo nano /etc/hosts
 on the web browser, enter: ``http://example.com`` or ``http://test.com``
 
 To verify or learn more, check [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
+
+#### What is a Child Process?<br/>
+	> A child process is a procress created by another process (called the parent process). The benefit
+	of a child process is that it can start/stop at will without affecting the parent process.<br/>
+	The child process is, however, is typically dependent on the parent process. If the parent process
+	dies, the child process becomes an orphan process.
+	Apache creates child processes whenever the number of requests (web page accesses from users)
+	exceeds the maximum allowed number of requests. When the maximum number of child process requested
+	is exceeded, another child process spawns.
+
+	To view all running processes with their child processes in a "tree" format, use the following command:
+	```
+	$ ps axf
+	```
 
 #### Domains, subdomains and paths
 domain is the identity of representation (in the form of letters) of an IP address.
