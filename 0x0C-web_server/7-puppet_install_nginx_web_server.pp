@@ -1,20 +1,20 @@
 # Puppet manifest to install nginx
 package { 'nginx':
-	ensure => installed
+  ensure => installed,
 }
 
-file_name {'aaaaa':
-	ensure => 'present',
-	path => '/etc/nginx/sites-avaibable/default',
-	after => 'listen 80 default_server;'
-	link => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+file_line {'aaaaa':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-avaibable/default',
+  after  => 'listen 80 default_server;'
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-file { '/var/www/html/index.html:
-	content => 'School";
+file { '/var/www/html/index.html':
+  content => 'Hello World!';
 }
 
 service {'nginx':
-	ensure => running,
-	require => package['nginx'],
+  ensure  => running,
+  require => package['nginx'],
 }
