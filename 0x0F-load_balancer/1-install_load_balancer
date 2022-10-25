@@ -10,5 +10,5 @@ sudo sed -i '/listen gideonavenue/a		bind :80' /etc/haproxy/haproxy.cfg
 sudo sed -i '/bind :80/a		mode http' /etc/haproxy/haproxy.cfg
 sudo sed -i '/mode http/a		server 34581-web-01 3.235.79.149:80 check' /etc/haproxy/haproxy.cfg
 sudo sed -i '/server 34581-web-01 3.235.79.149:80 check/a		server 34581-web-02 54.209.196.196:80 check'
-sudo sed -i '/#EXTRAOPTS="-de -m 16'/a ENABLED=1' /etc/default/haproxy
+sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
 sudo service haproxy start
