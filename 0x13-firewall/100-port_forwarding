@@ -1,7 +1,7 @@
-ufw allow 8080/tcp
+sudo ufw allow 8080/tcp
 echo "*nat
 :PREROUTING ACCEPT [0:0]
 -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
-COMMIT" | tee /etc/ufw/before.rules
-ufw enable
-service ufw restart
+COMMIT" | sudo tee /etc/ufw/before.rules
+sudo ufw enable
+sudo service ufw restart
