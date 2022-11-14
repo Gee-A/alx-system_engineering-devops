@@ -6,7 +6,7 @@ if __name__ == '__main__':
     import json
 
     d = {}
-    for user_id in range(1,11):
+    for user_id in range(1, 11):
         user = get("https://jsonplaceholder.typicode.com/users/{}"
                    .format(user_id))
         name = user.json()
@@ -15,7 +15,7 @@ if __name__ == '__main__':
         todos = req.json()
 
         d[user_id] = [dict(task=todo['title'], completed=todo['completed'],
-                          username=name['username']) for todo in todos]
+                           username=name['username']) for todo in todos]
 
         with open('todo_all_employees.json', 'w') as f:
             f.write(json.dumps(d))
