@@ -1,6 +1,5 @@
-# Puppet manifest to change open file limit
-exec { 'file-limit':
-  comaand => 'sed -i s/15/4096/g /etc/default/nginx; \
-  /etc/init.d/nginx restart',
-  path    => ['/bin'],
+# Fixing the number of failed requests to 0
+exec { 'fix--for-nginx':
+  comaand => "sed -i 's/worker_processes 4;/worker_processes 7;/g' /etc/nginx/nginx.conf; sudo service nginx restart",
+  path    => ['/bin', '/usr/bin', '/usr/sbin'],
 }
